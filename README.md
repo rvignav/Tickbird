@@ -1,0 +1,2 @@
+# tickbird-mobile-app
+An advanced Swift/Node.js app allowing visually impaired people to aurally understand prescriptions from their doctors in order to increase independence and prevent lethal miscommunication from their doctors. The future plans for this app are to expand to languages other than English and Spanish and to include a smart profiling feature, which uses the user's conditions and needed prescriptions to find a nearby pharmacy with their required medicine.
