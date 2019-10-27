@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>848076442022-ubtvutrjfaqbi7dofpr6b1pke86ifeqh.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.848076442022-ubtvutrjfaqbi7dofpr6b1pke86ifeqh</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA3KSjciRyyQEc6nopIQ3Z0_lvjEXf0yNY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>848076442022</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.rvignav.OCRApp</string>
+	<key>PROJECT_ID</key>
+	<string>menureader-varshacking</string>
+	<key>STORAGE_BUCKET</key>
+	<string>menureader-varshacking.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:848076442022:ios:9d4e8ee6c7543fc00e2767</string>
+	<key>DATABASE_URL</key>
+	<string>https://menureader-varshacking.firebaseio.com</string>
+</dict>
+</plist>
