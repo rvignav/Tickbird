@@ -6,7 +6,7 @@ import FirebaseDatabase
 class ViewController: UIViewController, G8TesseractDelegate {
     
     @IBOutlet weak var name: UITextField!
-    
+    var sendname = ""
     let synthesizer = AVSpeechSynthesizer()
     
     @IBOutlet weak var password: UITextField!
@@ -14,16 +14,20 @@ class ViewController: UIViewController, G8TesseractDelegate {
 
     @IBAction func clicked(_ sender: Any) {
         let ref = Database.database().reference().child("\(name.text as! String)")
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "nextView") as! DatabaseTableViewController
         let pass = password.text
         if (ref.value(forKey: "password") as! String) == pass {
-            self.present(nextViewController, animated:true, completion:nil)
+            self.sendname = name.text!
+            performSegue(withIdentifier: "username", sender: self)
         } else {
             let alert = UIAlertController(title: "Error", message: "Username or password incorrect", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var vc = segue.destination as! DatabaseTableViewController
+        vc.finalName = self.sendname
     }
     
     override func viewDidLoad() {
