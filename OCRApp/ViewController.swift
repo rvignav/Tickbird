@@ -8,31 +8,67 @@ class ViewController: UIViewController, G8TesseractDelegate {
     @IBOutlet weak var name: UITextField!
     var sendname = ""
     let synthesizer = AVSpeechSynthesizer()
+    @IBOutlet weak var pastbutton: UIButton!
     
     @IBOutlet weak var password: UITextField!
     let utterance = AVSpeechUtterance(string: "Hello. This is Tickbird™, an app meant to aid visually impaired people in aurally understanding prescriptions from any doctor. Click near the top to Scan a Prescription. Click near the middle to see past prescriptions. Click near the bottom to Update your Profile.")
 
     @IBAction func clicked(_ sender: Any) {
-        let ref = Database.database().reference().child("\(name.text as! String)")
+        let ref = Database.database().reference()
         let pass = password.text
-        if (ref.value(forKey: "password") as! String) == pass {
+        var firpass = ""
+        ref.child(name.text as! String).child("password").observeSingleEvent(of: .value, with: { dataSnapshot in
+          firpass = dataSnapshot.value as! String
+        })
+        print("password: \(firpass)")
+//        ref.child("\(name.text as! String)").child("password").runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
+//          var pass = currentData.value
+//            if pass != nil {
+//                firpass = pass as! String
+//          }
+//            return TransactionResult.success(withValue: currentData)
+//        }) { (error, committed, snapshot) in
+//             if error == nil {
+//
+//             }
+//        }
+//        var bool = false
+//        let refHandle = ref.observe(DataEventType.value, with: { (snapshot) in
+//            if snapshot.hasChild(self.name.text as! String) {
+//                let val = snapshot.childSnapshot(forPath: self.name.text as! String).value(forKey: "password") as? String ?? ""
+//                if (val == pass) {
+//                    bool = true
+//                }
+//            }
+//        })
+        if firpass == pass {
             self.sendname = name.text!
+            let vc = DatabaseTableViewController(nibName: "DatabaseTableViewController", bundle: nil)
+            vc.finalName = self.sendname
+            navigationController?.pushViewController(vc, animated: true)
             performSegue(withIdentifier: "username", sender: self)
         } else {
-            let alert = UIAlertController(title: "Error", message: "Username or password incorrect", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "Error", message: "Incorrect username or password", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var vc = segue.destination as! DatabaseTableViewController
-        vc.finalName = self.sendname
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         synthesizer.speak(utterance)
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(self.doneClicked))
+        toolbar.setItems([doneButton], animated: false)
+        
+        name.inputAccessoryView = toolbar
+        password.inputAccessoryView = toolbar
+    }
+    
+    @objc func doneClicked() {
+        view.endEditing(true)
     }
     
     override func didReceiveMemoryWarning() {

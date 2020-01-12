@@ -128,8 +128,19 @@ class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         synthesizer.speak(utterance)
         configT()
         configureTapGesture()
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+               
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(self.doneClicked))
+        toolbar.setItems([doneButton], animated: false)
+            
+        yourName.inputAccessoryView = toolbar
+        prescriptionName.inputAccessoryView = toolbar
     }
-    
+           
+    @objc func doneClicked() {
+        view.endEditing(true)
+    }
     private func configureTapGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         view.addGestureRecognizer(tapGesture)

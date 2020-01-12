@@ -41,7 +41,21 @@ class ProfileViewController:UIViewController {
         super.viewDidLoad()
         synthesizer.speak(utterance)
         configureTextFields()
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+               
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(self.doneClicked))
+        toolbar.setItems([doneButton], animated: false)
         
+        nameField.inputAccessoryView = toolbar
+        physicianField.inputAccessoryView = toolbar
+        ageField.inputAccessoryView = toolbar
+        passField.inputAccessoryView = toolbar
+        conditionsField.inputAccessoryView = toolbar
+    }
+           
+    @objc func doneClicked() {
+        view.endEditing(true)
     }
     
     override func didReceiveMemoryWarning() {

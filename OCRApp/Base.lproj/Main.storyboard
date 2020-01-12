@@ -121,6 +121,7 @@
                                             <color key="titleShadowColor" red="0.090196078430000007" green="0.086274509799999996" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
+                                            <action selector="clicked:" destination="ze9-3E-SIs" eventType="touchUpInside" id="mzC-d4-Dqd"/>
                                             <segue destination="kR8-V1-zDk" kind="show" id="LcQ-Z6-Xn0"/>
                                         </connections>
                                     </button>
@@ -133,7 +134,6 @@
                                             <color key="titleShadowColor" red="0.090196078430000007" green="0.086274509799999996" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="clicked:" destination="ze9-3E-SIs" eventType="touchUpInside" id="TjA-jX-gf2"/>
                                             <segue destination="3d4-J0-o0I" kind="show" id="iRo-9l-nZL"/>
                                         </connections>
                                     </button>
@@ -181,6 +181,7 @@
                     <connections>
                         <outlet property="name" destination="icV-4x-ehO" id="Jja-L7-hxr"/>
                         <outlet property="password" destination="z6s-33-7UJ" id="3AY-7i-AFO"/>
+                        <outlet property="pastbutton" destination="9mY-QI-qxB" id="d26-oY-B2n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uma-qu-SV2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -465,7 +466,7 @@
         <image name="final logo tickbird" width="446" height="338"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="muK-C6-eb0"/>
+        <segue reference="e64-Rb-Hhd"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.95686274510000002" green="0.7725490196" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
