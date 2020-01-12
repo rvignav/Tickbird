@@ -23,8 +23,9 @@ class DatabaseTableViewController: UIViewController { // UITableViewDelegate, UI
         tableView.delegate = self
         tableView.dataSource = self
         
-        
-        
+    }
+    
+    func data() {
         ref = Database.database().reference()
         databaseHandle = ref?.child("Prescriptions").observe(.childAdded, with: { (snapshot) in
            let post = snapshot.key as? String
@@ -39,12 +40,10 @@ class DatabaseTableViewController: UIViewController { // UITableViewDelegate, UI
             }
             
         })
-        
-        print(list)
     }
+    
     override func didReceiveMemoryWarning() {
-        let synthesizer = AVSpeechSynthesizer() 
-        let utterance = AVSpeechUtterance(string: "This is your profile. Please enter your name, your physician's name, your conditions, and your age in the fields. They appear in that order. If you are lost, click in the general area and Accessibility will help you find it. ")
+        
         super.didReceiveMemoryWarning()
         
     }

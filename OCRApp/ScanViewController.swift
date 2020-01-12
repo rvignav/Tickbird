@@ -6,6 +6,7 @@ import FirebaseDatabase
 
 class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, G8TesseractDelegate {
     
+    @IBOutlet weak var yourName: UITextField!
     
     
     @IBOutlet weak var prescriptionName: UITextField!
@@ -117,7 +118,7 @@ class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         view.endEditing(true)
         let lab = prescriptionName.text
         let rref = Database.database().reference()
-        rref.child("Prescriptions/\(lab!)").setValue(text)
+        rref.child("\(yourName.text as! String)/prescriptions/\(lab!)").setValue(text)
         
     }
     

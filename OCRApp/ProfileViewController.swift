@@ -9,13 +9,15 @@ class ProfileViewController:UIViewController {
     @IBOutlet weak var physicianField: UITextField!
     @IBOutlet weak var conditionsField: UITextField!
     @IBOutlet weak var ageField: UITextField!
+    @IBOutlet weak var passField: UITextField!
     
     let synthesizer = AVSpeechSynthesizer()
-    let utterance = AVSpeechUtterance(string: "This is your profile. Please enter your name, your physician's name, your conditions, and your age in the fields. They appear in that order. If you are lost, click in the general area and Accessibility will help you find it. ")
+    let utterance = AVSpeechUtterance(string: "This is your profile. Please enter your name, your physician's name, your conditions, your age, and your password in the fields.")
     
     @IBAction func confirmButton(_ sender: Any) {
         view.endEditing(true)
         let ref = Database.database().reference()
+         ref.child("\(nameField.text as! String)/password").setValue(passField.text as! String)
         ref.child("\(nameField.text as! String)/physician").setValue(physicianField.text as! String)
         ref.child("\(nameField.text as! String)/conditions").setValue(conditionsField.text as! String)
         ref.child("\(nameField.text as! String)/age").setValue(ageField.text as! String)
