@@ -16,11 +16,25 @@ class ProfileViewController:UIViewController {
     
     @IBAction func confirmButton(_ sender: Any) {
         view.endEditing(true)
+        var bool = false
         let ref = Database.database().reference()
-         ref.child("\(nameField.text as! String)/password").setValue(passField.text as! String)
-        ref.child("\(nameField.text as! String)/physician").setValue(physicianField.text as! String)
-        ref.child("\(nameField.text as! String)/conditions").setValue(conditionsField.text as! String)
-        ref.child("\(nameField.text as! String)/age").setValue(ageField.text as! String)
+        let databaseHandle = ref.observe(.childAdded, with: { (snapshot) in
+            let name = snapshot.key
+            if (name == self.nameField.text as! String) {
+                 bool = true
+            }
+        })
+        if (!bool) {
+            ref.child("\(nameField.text as! String)/password").setValue(passField.text as! String)
+            ref.child("\(nameField.text as! String)/physician").setValue(physicianField.text as! String)
+            ref.child("\(nameField.text as! String)/conditions").setValue(conditionsField.text as! String)
+            ref.child("\(nameField.text as! String)/age").setValue(ageField.text as! String)
+        }
+        else {
+            let alert = UIAlertController(title: "Error", message: "The username \(nameField.text as! String) is not available. Please choose another.", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     override func viewDidLoad() {
         
