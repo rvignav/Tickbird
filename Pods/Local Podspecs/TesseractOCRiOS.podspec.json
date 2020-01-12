@@ -1,0 +1,53 @@
+{
+  "name": "TesseractOCRiOS",
+  "header_dir": "TesseractOCR",
+  "version": "4.0.0",
+  "summary": "Use Tesseract OCR in iOS projects written in either Objective-C or Swift.",
+  "homepage": "https://github.com/gali8/Tesseract-OCR-iOS",
+  "documentation_url": "https://github.com/gali8/Tesseract-OCR-iOS/blob/master/README.md",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE.md"
+  },
+  "authors": {
+    "Daniele Galiotto": "genius@g8production.com",
+    "Kevin Conley": "kcon@stanford.edu"
+  },
+  "source": {
+    "git": "https://github.com/gali8/Tesseract-OCR-iOS.git",
+    "tag": "4.0.0"
+  },
+  "ios": {
+    "source_files": [
+      "TesseractOCR/*.{h,m,mm}",
+      "TesseractOCR/ios/include/**/*.h"
+    ],
+    "private_header_files": "TesseractOCR/ios/include/**/*.h",
+    "frameworks": [
+      "UIKit",
+      "Foundation"
+    ],
+    "vendored_libraries": "TesseractOCR/ios/lib/*.a"
+  },
+  "platforms": {
+    "ios": "10.0",
+    "osx": "10.13"
+  },
+  "osx": {
+    "source_files": [
+      "TesseractOCR/*.{h,m,mm}",
+      "TesseractOCR/macos/include/**/*.h"
+    ],
+    "private_header_files": "TesseractOCR/macos/include/**/*.h",
+    "frameworks": [
+      "AppKit",
+      "Foundation"
+    ],
+    "vendored_libraries": "TesseractOCR/macos/lib/*.a"
+  },
+  "requires_arc": true,
+  "xcconfig": {
+    "OTHER_LDFLAGS": "-lc++ -lz",
+    "CLANG_CXX_LIBRARY": "compiler-default"
+  }
+}

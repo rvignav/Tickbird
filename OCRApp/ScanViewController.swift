@@ -72,13 +72,10 @@ class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             if let tesseract = G8Tesseract(language: "eng") {
                 
                 tesseract.delegate = self
-                tesseract.image = selectedImage.g8_blackAndWhite()
+                
+                tesseract.image = convertToGrayScale(image: selectedImage)
                 tesseract.recognize()
                 text = tesseract.recognizedText
-                
-                if (text.contains("1 week")) {
-                    setNotifications()
-                }
             }
             
             // DO FILTERING BEFORE SPEAKING
@@ -89,67 +86,32 @@ class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
     }
     
-    func setNotifications() {
+    func convertToGrayScale(image: UIImage) -> UIImage {
 
-        let date = Date()
+        // Create image rectangle with current image width/height
+        let imageRect:CGRect = CGRect(x:0, y:0, width:image.size.width, height: image.size.height)
 
-        let c = Calendar.current
+        // Grayscale color space
+        let colorSpace = CGColorSpaceCreateDeviceGray()
+        let width = image.size.width
+        let height = image.size.height
 
-        let day = c.component(.day, from: date)
+        // Create bitmap content with current image size and grayscale colorspace
+        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.none.rawValue)
 
-        let content = UNMutableNotificationContent()
+        // Draw image into current context, with specified rectangle
+        // using previously defined context (with grayscale colorspace)
+        let context = CGContext(data: nil, width: Int(width), height: Int(height), bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: bitmapInfo.rawValue)
+        context?.draw(image.cgImage!, in: imageRect)
+        let imageRef = context!.makeImage()
 
-        content.title = "Refill \(prescriptionName.text)"
+        // Create a new UIImage object
+        let newImage = UIImage(cgImage: imageRef!)
 
-        content.body = "Make sure to go to your local pharmacy to refill \(prescriptionName.text)"
-
-        
-
-        var dateComponents = DateComponents()
-
-        dateComponents.calendar = Calendar.current
-
-
-
-        dateComponents.weekday = day
-
-    
-
-        dateComponents.hour = 16
-
-           
-
-        // Create the trigger as a repeating event.
-
-        let trigger = UNCalendarNotificationTrigger(
-
-                 dateMatching: dateComponents, repeats: true)
-
-        
-
-        let uuidString = UUID().uuidString
-
-        let request = UNNotificationRequest(identifier: uuidString,
-
-                    content: content, trigger: trigger)
-
-
-
-        // Schedule the request with the system.
-
-        let notificationCenter = UNUserNotificationCenter.current()
-
-        notificationCenter.add(request) { (error) in
-
-           if error != nil {
-
-              // Handle any errors.
-
-           }
-
-        }
-
+        return newImage
     }
+    
+    
     
     @IBAction func savePrescription(_ sender: Any) {
         view.endEditing(true)
