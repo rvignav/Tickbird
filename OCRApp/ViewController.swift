@@ -17,41 +17,34 @@ class ViewController: UIViewController, G8TesseractDelegate {
         let ref = Database.database().reference()
         let pass = password.text
         var firpass = ""
+        var bool = false;
         ref.child(name.text as! String).child("password").observeSingleEvent(of: .value, with: { dataSnapshot in
-          firpass = dataSnapshot.value as! String
+          firpass = dataSnapshot.value as? String ?? ""
+            if firpass == pass {
+                bool = true
+            }
+            if bool {
+                self.sendname = self.name.text!
+                let vc = DatabaseTableViewController(nibName: "DatabaseTableViewController", bundle: nil)
+                vc.finalName = self.sendname
+                self.navigationController?.pushViewController(vc, animated: true)
+                self.performSegue(withIdentifier: "username", sender: self)
+            } else {
+                let alert = UIAlertController(title: "Error", message: "Incorrect username or password", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+//                self.performSegue(withIdentifier: "failed", sender: self)
+            }
         })
-        print("password: \(firpass)")
-//        ref.child("\(name.text as! String)").child("password").runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
-//          var pass = currentData.value
-//            if pass != nil {
-//                firpass = pass as! String
-//          }
-//            return TransactionResult.success(withValue: currentData)
-//        }) { (error, committed, snapshot) in
-//             if error == nil {
-//
-//             }
-//        }
-//        var bool = false
-//        let refHandle = ref.observe(DataEventType.value, with: { (snapshot) in
-//            if snapshot.hasChild(self.name.text as! String) {
-//                let val = snapshot.childSnapshot(forPath: self.name.text as! String).value(forKey: "password") as? String ?? ""
-//                if (val == pass) {
-//                    bool = true
-//                }
-//            }
-//        })
-        if firpass == pass {
-            self.sendname = name.text!
-            let vc = DatabaseTableViewController(nibName: "DatabaseTableViewController", bundle: nil)
-            vc.finalName = self.sendname
-            navigationController?.pushViewController(vc, animated: true)
-            performSegue(withIdentifier: "username", sender: self)
-        } else {
-            let alert = UIAlertController(title: "Error", message: "Incorrect username or password", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
+        if let ident = identifier {
+            if ident == "failed" {
+                return false
+            }
         }
+        return true
     }
     
     override func viewDidLoad() {
@@ -73,5 +66,5 @@ class ViewController: UIViewController, G8TesseractDelegate {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }   
+    }
 }
