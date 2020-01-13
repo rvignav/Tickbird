@@ -11,40 +11,37 @@ class ViewController: UIViewController, G8TesseractDelegate {
     @IBOutlet weak var pastbutton: UIButton!
     
     @IBOutlet weak var password: UITextField!
-    let utterance = AVSpeechUtterance(string: "Hello. This is Tickbird™, an app meant to aid visually impaired people in aurally understanding prescriptions from any doctor. Click near the top to Scan a Prescription. Click near the middle to see past prescriptions. Click near the bottom to Update your Profile.")
+    let utterance = AVSpeechUtterance(string: "Hello. This is Tickbird™, an app meant to aid visually impaired people in aurally understanding prescriptions from any doctor. Click near the top to Scan a Prescription. If you want to see you past prescriptions, input your name and password, and then click near the middle. Click near the bottom to Update your Profile.")
 
     @IBAction func clicked(_ sender: Any) {
-        let ref = Database.database().reference()
-        let pass = password.text
-        var firpass = ""
-        var bool = false;
-        ref.child(name.text as! String).child("password").observeSingleEvent(of: .value, with: { dataSnapshot in
-          firpass = dataSnapshot.value as? String ?? ""
-            if firpass == pass {
-                bool = true
-            }
-            if bool {
-                self.sendname = self.name.text!
-                let vc = DatabaseTableViewController(nibName: "DatabaseTableViewController", bundle: nil)
-                vc.finalName = self.sendname
-                self.navigationController?.pushViewController(vc, animated: true)
-                self.performSegue(withIdentifier: "username", sender: self)
-            } else {
-                let alert = UIAlertController(title: "Error", message: "Incorrect username or password", preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-//                self.performSegue(withIdentifier: "failed", sender: self)
-            }
-        })
-    }
-    
-    override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
-        if let ident = identifier {
-            if ident == "failed" {
-                return false
-            }
+        if (name.text == "" || password.text == "") {
+            let alert = UIAlertController(title: "Error", message: "Please fill out all fields.", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            let ref = Database.database().reference()
+            let pass = password.text
+            var firpass = ""
+            var bool = false;
+            ref.child(name.text as! String).child("password").observeSingleEvent(of: .value, with: { dataSnapshot in
+              firpass = dataSnapshot.value as? String ?? ""
+                if firpass == pass {
+                    bool = true
+                }
+                if bool {
+                    self.sendname = self.name.text!
+                    let vc = DatabaseTableViewController(nibName: "DatabaseTableViewController", bundle: nil)
+                    vc.finalName = self.sendname
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    let next = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DatabaseTableViewController") as! DatabaseTableViewController
+                    self.present(next, animated: true, completion: nil)
+                } else {
+                    let alert = UIAlertController(title: "Error", message: "Incorrect username or password", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            })
         }
-        return true
     }
     
     override func viewDidLoad() {

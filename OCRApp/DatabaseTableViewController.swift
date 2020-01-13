@@ -15,7 +15,7 @@ class DatabaseTableViewController: UIViewController { // UITableViewDelegate, UI
     var databaseHandle: DatabaseHandle?
     
     let synthesizer = AVSpeechSynthesizer()
-    let utterance = AVSpeechUtterance(string: "This is all your past prescriptions. You are either here because you just scanned a prescription or you are looking for your previous ones. They will show up alphabetically. Use accessbilitty to find the buttons for each prescription. Once you click it, it will read your prescription out loud to you, so make sure you follow the instructions from your doctor. ")
+    let utterance = AVSpeechUtterance(string: "This is all your past prescriptions. They will show up alphabetically. Use accessbility to find the buttons for each prescription. Once you click it, it will read your prescription out loud to you, so make sure you follow the instructions from your doctor. ")
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -15,7 +15,7 @@ class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var imagePicked: UIImageView!
     
     let synthesizer = AVSpeechSynthesizer()
-    let utterance = AVSpeechUtterance(string: "This is where you will scan prescriptions. Click the bottom button to open the camera and take the picture. While taking the picture, let accessibility guide you to where the prescription is. Then click use image in the bottom right hand corner. Then give your prescription a title, which is above the image. Finally, click the save prescription to confirm and save your prescription. ")
+    let utterance = AVSpeechUtterance(string: "This is where you will scan prescriptions. Click the bottom button to open the camera and take the picture. While taking the picture, let accessibility guide you to where the prescription is. Then click use image in the bottom right hand corner. Then input your name and the title of your prescription, which is above the image. Finally, click the save prescription to confirm and save your prescription. ")
     
     private func configT() {
         prescriptionName.delegate = self
@@ -115,11 +115,16 @@ class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     
     @IBAction func savePrescription(_ sender: Any) {
-        view.endEditing(true)
-        let lab = prescriptionName.text
-        let rref = Database.database().reference()
-        rref.child("\(yourName.text as! String)/prescriptions/\(lab!)").setValue(text)
-        
+        if (yourName.text == "" || prescriptionName.text == "") {
+            let alert = UIAlertController(title: "Error", message: "Please fill out all fields.", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            view.endEditing(true)
+            let lab = prescriptionName.text
+            let rref = Database.database().reference()
+            rref.child("\(yourName.text as! String)/prescriptions/\(lab!)").setValue(text)
+        }
     }
     
     override func viewDidLoad() {
