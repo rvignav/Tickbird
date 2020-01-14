@@ -8,13 +8,12 @@ class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBOutlet weak var yourName: UITextField!
     
-    
     @IBOutlet weak var prescriptionName: UITextField!
-    
     
     @IBOutlet weak var imagePicked: UIImageView!
     
     let synthesizer = AVSpeechSynthesizer()
+   
     let utterance = AVSpeechUtterance(string: "This is where you will scan prescriptions. Click the bottom button to open the camera and take the picture. While taking the picture, let accessibility guide you to where the prescription is. Then click use image in the bottom right hand corner. Then input your name and the title of your prescription, which is above the image. Finally, click the save prescription to confirm and save your prescription. ")
     
     private func configT() {
