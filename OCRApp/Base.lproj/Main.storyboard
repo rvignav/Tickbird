@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ze9-3E-SIs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ze9-3E-SIs">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -502,12 +502,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kOo-gW-akh">
-                                <rect key="frame" x="20" y="118" width="374" height="690"/>
+                                <rect key="frame" x="20" y="50" width="374" height="758"/>
                                 <color key="backgroundColor" red="0.093751572072505951" green="0.080893196165561676" blue="0.23530906438827515" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                 </accessibility>
-                                <mutableString key="text">PRIVACY POLICY: Tickbird
+                                <string key="text">PRIVACY POLICY: Tickbird
 Last updated January 13, 2020
 Thank you for choosing to be part of our community at Tickbird (“Company”, “we”, “us”, or “our”). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about our notice , or our practices with regards to your personal information, please contact us at tickbirdapp@gmail.com. 
 When you visit our mobile application, and use our services, you trust us with your personal information. We take your privacy very seriously. In this privacy notice, we seek to explain to you in the clearest way possible what information we collect, how we use it and what rights you have in relation to it. We hope you take some time to read through it carefully, as it is important. If there are any terms in this privacy notice that you do not agree with, please discontinue use of our Apps and our services. 
@@ -603,36 +603,28 @@ If you have questions or comments about this policy, you may email us at tickbir
 HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?
 Based on the laws of some countries, you may have the right to request access to the personal information we collect from you, change that information, or delete it in some circumstances. To request to review, update, or delete your personal information, please email tickbirdapp@gmail.com. 
 
-</mutableString>
+</string>
                                 <color key="textColor" red="0.95686274510000002" green="0.7725490196" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qiV-1f-e5E">
-                                <rect key="frame" x="20" y="8" width="44" height="38"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ny6-Zx-eLp">
+                                <rect key="frame" x="20" y="8" width="42" height="37"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="ze9-3E-SIs" kind="show" id="wtY-tQ-pUs"/>
+                                    <segue destination="ze9-3E-SIs" kind="show" id="7lH-4v-sbM"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.093751572072505951" green="0.080893196165561676" blue="0.23530906438827515" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="kOo-gW-akh" firstAttribute="trailing" secondItem="NuX-VN-4uG" secondAttribute="trailingMargin" id="5cH-TS-SYE"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="qiV-1f-e5E" secondAttribute="trailing" constant="330" id="Anq-oV-JWx"/>
-                            <constraint firstItem="kOo-gW-akh" firstAttribute="top" secondItem="qiV-1f-e5E" secondAttribute="bottom" constant="4" id="NGB-de-lsH"/>
+                            <constraint firstItem="ny6-Zx-eLp" firstAttribute="top" secondItem="J9Z-E7-WLw" secondAttribute="bottom" constant="8" symbolic="YES" id="KO9-Wy-DeL"/>
+                            <constraint firstItem="ny6-Zx-eLp" firstAttribute="leading" secondItem="NuX-VN-4uG" secondAttribute="leadingMargin" id="R96-ox-Hfm"/>
                             <constraint firstItem="kOo-gW-akh" firstAttribute="leading" secondItem="NuX-VN-4uG" secondAttribute="leadingMargin" id="SM1-Yx-bie"/>
-                            <constraint firstItem="kOo-gW-akh" firstAttribute="top" secondItem="J9Z-E7-WLw" secondAttribute="bottom" id="UAW-UT-Wbp"/>
                             <constraint firstItem="P9L-Wg-qwm" firstAttribute="top" secondItem="kOo-gW-akh" secondAttribute="bottom" id="VNe-me-ThP"/>
-                            <constraint firstItem="kOo-gW-akh" firstAttribute="top" secondItem="qiV-1f-e5E" secondAttribute="bottom" constant="40" id="aZ9-S6-O14"/>
                             <constraint firstItem="kOo-gW-akh" firstAttribute="top" secondItem="J9Z-E7-WLw" secondAttribute="bottom" constant="50" id="c7P-9X-ueo"/>
-                            <constraint firstItem="qiV-1f-e5E" firstAttribute="top" secondItem="J9Z-E7-WLw" secondAttribute="bottom" constant="40" id="dkG-Vt-yoV"/>
-                            <constraint firstItem="qiV-1f-e5E" firstAttribute="top" secondItem="J9Z-E7-WLw" secondAttribute="bottom" constant="8" id="h1E-0d-CNC"/>
-                            <constraint firstItem="kOo-gW-akh" firstAttribute="top" secondItem="qiV-1f-e5E" secondAttribute="bottom" constant="72" id="h24-HA-Hdu"/>
-                            <constraint firstItem="qiV-1f-e5E" firstAttribute="leading" secondItem="NuX-VN-4uG" secondAttribute="leadingMargin" id="huB-al-In1"/>
-                            <constraint firstItem="qiV-1f-e5E" firstAttribute="leading" secondItem="NuX-VN-4uG" secondAttribute="leadingMargin" id="jCZ-uT-Uvc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="qiV-1f-e5E" secondAttribute="trailing" constant="330" id="onF-Md-t0y"/>
                             <constraint firstItem="kOo-gW-akh" firstAttribute="trailing" secondItem="NuX-VN-4uG" secondAttribute="trailingMargin" id="qxv-YP-AIQ"/>
                             <constraint firstItem="kOo-gW-akh" firstAttribute="leading" secondItem="NuX-VN-4uG" secondAttribute="leadingMargin" id="sZM-ig-XqM"/>
                             <constraint firstItem="P9L-Wg-qwm" firstAttribute="top" secondItem="kOo-gW-akh" secondAttribute="bottom" id="tj8-bY-19k"/>
@@ -649,7 +641,7 @@ Based on the laws of some countries, you may have the right to request access to
         <image name="final logo tickbird" width="446" height="338"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wtY-tQ-pUs"/>
+        <segue reference="7lH-4v-sbM"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.95686274510000002" green="0.7725490196" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
