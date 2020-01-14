@@ -616,9 +616,8 @@ Based on the laws of some countries, you may have the right to request access to
                                     <segue destination="ze9-3E-SIs" kind="show" id="7lH-4v-sbM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gut-yO-2ZK">
-                                <rect key="frame" x="161" y="3" width="233" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gut-yO-2ZK">
+                                <rect key="frame" x="189" y="8" width="205" height="38"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <state key="normal" title="Listen to Privacy Policy"/>
                                 <connections>
@@ -631,10 +630,12 @@ Based on the laws of some countries, you may have the right to request access to
                         <constraints>
                             <constraint firstItem="kOo-gW-akh" firstAttribute="trailing" secondItem="NuX-VN-4uG" secondAttribute="trailingMargin" id="5cH-TS-SYE"/>
                             <constraint firstItem="ny6-Zx-eLp" firstAttribute="top" secondItem="J9Z-E7-WLw" secondAttribute="bottom" constant="8" symbolic="YES" id="KO9-Wy-DeL"/>
+                            <constraint firstItem="Gut-yO-2ZK" firstAttribute="top" secondItem="J9Z-E7-WLw" secondAttribute="bottom" constant="8" symbolic="YES" id="Kzd-Yw-cwI"/>
                             <constraint firstItem="ny6-Zx-eLp" firstAttribute="leading" secondItem="NuX-VN-4uG" secondAttribute="leadingMargin" id="R96-ox-Hfm"/>
                             <constraint firstItem="kOo-gW-akh" firstAttribute="leading" secondItem="NuX-VN-4uG" secondAttribute="leadingMargin" id="SM1-Yx-bie"/>
                             <constraint firstItem="P9L-Wg-qwm" firstAttribute="top" secondItem="kOo-gW-akh" secondAttribute="bottom" id="VNe-me-ThP"/>
                             <constraint firstItem="kOo-gW-akh" firstAttribute="top" secondItem="J9Z-E7-WLw" secondAttribute="bottom" constant="50" id="c7P-9X-ueo"/>
+                            <constraint firstItem="Gut-yO-2ZK" firstAttribute="trailing" secondItem="NuX-VN-4uG" secondAttribute="trailingMargin" id="oLM-ad-s2y"/>
                             <constraint firstItem="kOo-gW-akh" firstAttribute="trailing" secondItem="NuX-VN-4uG" secondAttribute="trailingMargin" id="qxv-YP-AIQ"/>
                             <constraint firstItem="kOo-gW-akh" firstAttribute="leading" secondItem="NuX-VN-4uG" secondAttribute="leadingMargin" id="sZM-ig-XqM"/>
                             <constraint firstItem="P9L-Wg-qwm" firstAttribute="top" secondItem="kOo-gW-akh" secondAttribute="bottom" id="tj8-bY-19k"/>
