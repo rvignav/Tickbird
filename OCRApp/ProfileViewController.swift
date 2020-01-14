@@ -14,7 +14,11 @@ class ProfileViewController:UIViewController {
     let synthesizer = AVSpeechSynthesizer()
     let utterance = AVSpeechUtterance(string: "This is your profile. Please enter your name, your physician's name, your conditions, your age, and your password in the fields, then click confirm at the bottom.")
     
+    @IBAction func backButtonClicked(_ sender: Any) {
+         synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
+    }
     @IBAction func confirmButton(_ sender: Any) {
+         synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
         if (nameField.text == "" || passField.text == "" || physicianField.text == "" || conditionsField.text == "" || ageField.text == "") {
             let alert = UIAlertController(title: "Error", message: "Please fill out all fields.", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))

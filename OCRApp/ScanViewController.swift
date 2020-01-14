@@ -19,8 +19,15 @@ class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     private func configT() {
         prescriptionName.delegate = self
     }
+    @IBAction func backButtonClicked(_ sender: Any) {
+         synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
+    }
+    @IBAction func savePrescriptionsClicked(_ sender: Any) {
+         synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
+    }
     
     @IBAction func openCameraButton(_ sender: Any) {
+    
         
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let imagePicker = UIImagePickerController()

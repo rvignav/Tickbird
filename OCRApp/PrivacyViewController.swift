@@ -78,6 +78,9 @@ class PrivacyViewController: UIViewController {
     """)
     
     
+    @IBAction func backButtonClicked(_ sender: Any) {
+         synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
+    }
     @IBAction func onClick(_ sender: UIButton) {
         synthesizer.speak(utterance)
     }

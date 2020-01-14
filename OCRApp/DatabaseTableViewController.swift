@@ -79,6 +79,7 @@ extension DatabaseTableViewController: UITableViewDataSource, UITableViewDelegat
 
 extension DatabaseTableViewController: TableViewNew {
     func onClickCell(index: Int) {
+        synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
         let synthesize = AVSpeechSynthesizer()
         let utt = AVSpeechUtterance(string: "Prescription for \(list[index]): \(vals[index])")
         synthesize.speak(utt)

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ze9-3E-SIs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ze9-3E-SIs">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -126,6 +126,7 @@
                                             <color key="titleShadowColor" red="0.090196078430000007" green="0.086274509799999996" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
+                                            <action selector="scanPrescriptionClicked:" destination="ze9-3E-SIs" eventType="touchUpInside" id="DNT-Gf-149"/>
                                             <segue destination="WUX-BU-KOc" kind="show" id="brQ-vp-hLt"/>
                                         </connections>
                                     </button>
@@ -139,6 +140,7 @@
                                         </state>
                                         <connections>
                                             <action selector="clicked:" destination="ze9-3E-SIs" eventType="touchUpInside" id="mzC-d4-Dqd"/>
+                                            <action selector="pastPrescriptionClicked:" destination="ze9-3E-SIs" eventType="touchUpInside" id="uJQ-1i-lqO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRg-wc-FqI">
@@ -150,6 +152,7 @@
                                             <color key="titleShadowColor" red="0.090196078430000007" green="0.086274509799999996" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
+                                            <action selector="updateProfileClicked:" destination="ze9-3E-SIs" eventType="touchUpInside" id="knA-eX-cL4"/>
                                             <segue destination="3d4-J0-o0I" kind="show" id="iRo-9l-nZL"/>
                                         </connections>
                                     </button>
@@ -170,6 +173,7 @@
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                 <state key="normal" title="Privacy Policy"/>
                                 <connections>
+                                    <action selector="privacyPolicyClicked:" destination="ze9-3E-SIs" eventType="touchUpInside" id="dvW-Ed-k48"/>
                                     <segue destination="Y8Q-RT-5dt" kind="show" id="80u-aA-CRR"/>
                                 </connections>
                             </button>
@@ -233,16 +237,18 @@
                                 </state>
                                 <connections>
                                     <action selector="savePrescription:" destination="WUX-BU-KOc" eventType="touchUpInside" id="gJz-jb-25E"/>
+                                    <action selector="savePrescriptionsClicked:" destination="WUX-BU-KOc" eventType="touchUpInside" id="rK8-uo-zqb"/>
                                     <segue destination="ze9-3E-SIs" kind="show" id="e64-Rb-Hhd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZN-kz-F3y">
-                                <rect key="frame" x="15" y="15" width="44" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZN-kz-F3y">
+                                <rect key="frame" x="15" y="15" width="44" height="36"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <state key="normal" title="Back">
                                     <color key="titleColor" red="0.95686274510000002" green="0.7725490196" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="backButtonClicked:" destination="WUX-BU-KOc" eventType="touchUpInside" id="sOq-NP-agx"/>
                                     <segue destination="ze9-3E-SIs" kind="show" id="ZOb-Gx-04j"/>
                                 </connections>
                             </button>
@@ -363,6 +369,7 @@
                                     <color key="titleColor" red="0.95686274510000002" green="0.7725490196" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="backButtonClicked:" destination="3d4-J0-o0I" eventType="touchUpInside" id="nvW-tH-Z6L"/>
                                     <segue destination="ze9-3E-SIs" kind="show" id="muK-C6-eb0"/>
                                 </connections>
                             </button>
@@ -613,6 +620,7 @@ Based on the laws of some countries, you may have the right to request access to
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
+                                    <action selector="backButtonClicked:" destination="Y8Q-RT-5dt" eventType="touchUpInside" id="0Cq-QD-ZA8"/>
                                     <segue destination="ze9-3E-SIs" kind="show" id="7lH-4v-sbM"/>
                                 </connections>
                             </button>
