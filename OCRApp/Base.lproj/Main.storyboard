@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ze9-3E-SIs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ze9-3E-SIs">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -492,7 +492,7 @@
         <!--Privacy View Controller-->
         <scene sceneID="WkJ-aJ-xob">
             <objects>
-                <viewController storyboardIdentifier="PrivacyViewController" id="Y8Q-RT-5dt" customClass="PrivacyViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PrivacyViewController" id="Y8Q-RT-5dt" customClass="PrivacyViewController" customModule="OCRApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="J9Z-E7-WLw"/>
                         <viewControllerLayoutGuide type="bottom" id="P9L-Wg-qwm"/>
@@ -623,6 +623,7 @@ Based on the laws of some countries, you may have the right to request access to
                                 <state key="normal" title="Listen to Privacy Policy"/>
                                 <connections>
                                     <action selector="onClick:" destination="Y8Q-RT-5dt" eventType="touchUpInside" id="7RQ-sH-tDg"/>
+                                    <action selector="onClick:" destination="eLk-X3-TTW" eventType="touchUpInside" id="Sg3-S1-csh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -642,6 +643,7 @@ Based on the laws of some countries, you may have the right to request access to
                     <navigationItem key="navigationItem" id="3W9-gU-kGf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dpp-ea-7AJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="eLk-X3-TTW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="863.768115942029" y="-596.65178571428567"/>
         </scene>
