@@ -12,6 +12,7 @@
 		A31D04E8232868AA007E2FF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31D04E6232868AA007E2FF4 /* Main.storyboard */; };
 		A31D04EA232868AC007E2FF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A31D04E9232868AC007E2FF4 /* Assets.xcassets */; };
 		A31D04ED232868AC007E2FF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31D04EB232868AC007E2FF4 /* LaunchScreen.storyboard */; };
+		A3406F9323CD86FF00204EBC /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3406F9223CD86FF00204EBC /* PrivacyViewController.swift */; };
 		A35F0BBF2329B5750075BA48 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35F0BBE2329B5750075BA48 /* ScanViewController.swift */; };
 		A36D25A123287693002B3D76 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = A36D25A023287693002B3D76 /* tessdata */; };
 		A36D25A323299D48002B3D76 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A36D25A223299D48002B3D76 /* GoogleService-Info.plist */; };
@@ -31,6 +32,7 @@
 		A31D04E9232868AC007E2FF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A31D04EC232868AC007E2FF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A31D04EE232868AC007E2FF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3406F9223CD86FF00204EBC /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		A35F0BBE2329B5750075BA48 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		A36D25A023287693002B3D76 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		A36D25A223299D48002B3D76 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				A3D4886B2336F20B00CE7A71 /* ProfileViewController.swift */,
 				A3D488752336F82300CE7A71 /* DatabaseTableViewController.swift */,
 				A3040A2F2337756B00EE98CC /* NewTableViewCell.swift */,
+				A3406F9223CD86FF00204EBC /* PrivacyViewController.swift */,
 			);
 			path = OCRApp;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				A3040A302337756B00EE98CC /* NewTableViewCell.swift in Sources */,
 				A3D4886A2336F08C00CE7A71 /* ViewController.swift in Sources */,
 				A35F0BBF2329B5750075BA48 /* ScanViewController.swift in Sources */,
+				A3406F9323CD86FF00204EBC /* PrivacyViewController.swift in Sources */,
 				A3D4886C2336F20B00CE7A71 /* ProfileViewController.swift in Sources */,
 				A3D488762336F82300CE7A71 /* DatabaseTableViewController.swift in Sources */,
 				A31D04E3232868AA007E2FF4 /* AppDelegate.swift in Sources */,
