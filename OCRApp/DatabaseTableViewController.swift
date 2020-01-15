@@ -29,7 +29,7 @@ class DatabaseTableViewController: UIViewController { // UITableViewDelegate, UI
     
     func data() {
         ref = Database.database().reference()
-        databaseHandle = ref?.child("\(finalName)/prescriptions").observe(.childAdded, with: { (snapshot) in
+        databaseHandle = ref?.child(finalName).child("prescriptions").observe(.childAdded, with: { (snapshot) in
            let post = snapshot.key as? String
             print(post)
             if let actualPost = post {
