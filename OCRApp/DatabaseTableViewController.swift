@@ -19,6 +19,7 @@ class DatabaseTableViewController: UIViewController { // UITableViewDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(finalName)
         // Do any additional setup after loading the view.
        // synthesizer.speak(utterance)
         tableView.delegate = self
@@ -30,6 +31,7 @@ class DatabaseTableViewController: UIViewController { // UITableViewDelegate, UI
         ref = Database.database().reference()
         databaseHandle = ref?.child("\(finalName)/prescriptions").observe(.childAdded, with: { (snapshot) in
            let post = snapshot.key as? String
+            print(post)
             if let actualPost = post {
                 self.list.append(actualPost)
                 self.tableView.reloadData()
