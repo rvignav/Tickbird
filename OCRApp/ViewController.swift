@@ -42,17 +42,23 @@ class ViewController: UIViewController, G8TesseractDelegate {
                 }
                 if bool {
                     self.sendname = self.name.text!
-                    let vc = DatabaseTableViewController(nibName: "DatabaseTableViewController", bundle: nil)
+                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DatabaseTableViewController") as! DatabaseTableViewController
+                    print("sending: \(self.sendname)")
                     vc.finalName = self.sendname
                     self.navigationController?.pushViewController(vc, animated: true)
-                    let next = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DatabaseTableViewController") as! DatabaseTableViewController
-                    self.present(next, animated: true, completion: nil)
+                    self.present(vc, animated: true, completion: nil)
                 } else {
                     let alert = UIAlertController(title: "Error", message: "Incorrect username or password", preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 }
             })
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let next = segue.destination as? DatabaseTableViewController {
+            next.finalName = sendname
         }
     }
     

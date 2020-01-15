@@ -6,7 +6,7 @@ var vals = [String]()
 
 class DatabaseTableViewController: UIViewController { // UITableViewDelegate, UITableViewDataSource
 
-    var finalName = ""
+    var finalName: String? = nil
     var list = [String]()
     
     @IBOutlet var tableView: UITableView!
@@ -19,19 +19,20 @@ class DatabaseTableViewController: UIViewController { // UITableViewDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(finalName)
+        
         // Do any additional setup after loading the view.
-       // synthesizer.speak(utterance)
+        synthesizer.speak(utterance)
         tableView.delegate = self
         tableView.dataSource = self
         
+        data()
     }
     
     func data() {
+        print("finalName: \(finalName)")
         ref = Database.database().reference()
-        databaseHandle = ref?.child(finalName).child("prescriptions").observe(.childAdded, with: { (snapshot) in
+        databaseHandle = ref?.child(finalName as! String).child("prescriptions").observe(.childAdded, with: { (snapshot) in
            let post = snapshot.key as? String
-            print(post)
             if let actualPost = post {
                 self.list.append(actualPost)
                 self.tableView.reloadData()
