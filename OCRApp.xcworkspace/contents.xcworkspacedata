@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:OCRApp.xcodeproj">
+      location = "group:/Users/vignavramesh/Documents/tickbird/Tickbird.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

@@ -26,7 +26,7 @@
 		95C28FF2EF0CEB200687C973 /* Pods-OCRApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCRApp.debug.xcconfig"; path = "Target Support Files/Pods-OCRApp/Pods-OCRApp.debug.xcconfig"; sourceTree = "<group>"; };
 		98EF7D5ADB4F54741521ACA1 /* Pods-OCRApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCRApp.release.xcconfig"; path = "Target Support Files/Pods-OCRApp/Pods-OCRApp.release.xcconfig"; sourceTree = "<group>"; };
 		A3040A2F2337756B00EE98CC /* NewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTableViewCell.swift; sourceTree = "<group>"; };
-		A31D04DF232868AA007E2FF4 /* OCRApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCRApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A31D04DF232868AA007E2FF4 /* Tickbird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tickbird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A31D04E2232868AA007E2FF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A31D04E7232868AA007E2FF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A31D04E9232868AC007E2FF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 		A31D04E0232868AA007E2FF4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A31D04DF232868AA007E2FF4 /* OCRApp.app */,
+				A31D04DF232868AA007E2FF4 /* Tickbird.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,9 +112,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A31D04DE232868AA007E2FF4 /* OCRApp */ = {
+		A31D04DE232868AA007E2FF4 /* Tickbird */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A31D04F1232868AC007E2FF4 /* Build configuration list for PBXNativeTarget "OCRApp" */;
+			buildConfigurationList = A31D04F1232868AC007E2FF4 /* Build configuration list for PBXNativeTarget "Tickbird" */;
 			buildPhases = (
 				A71AB98366AC5F3180CF8E1A /* [CP] Check Pods Manifest.lock */,
 				A31D04DB232868AA007E2FF4 /* Sources */,
@@ -126,9 +126,9 @@
 			);
 			dependencies = (
 			);
-			name = OCRApp;
+			name = Tickbird;
 			productName = OCRApp;
-			productReference = A31D04DF232868AA007E2FF4 /* OCRApp.app */;
+			productReference = A31D04DF232868AA007E2FF4 /* Tickbird.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -146,7 +146,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A31D04DA232868A9007E2FF4 /* Build configuration list for PBXProject "OCRApp" */;
+			buildConfigurationList = A31D04DA232868A9007E2FF4 /* Build configuration list for PBXProject "Tickbird" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -159,7 +159,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A31D04DE232868AA007E2FF4 /* OCRApp */,
+				A31D04DE232868AA007E2FF4 /* Tickbird */,
 			);
 		};
 /* End PBXProject section */
@@ -377,7 +377,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 87JL4NC93M;
+				DEVELOPMENT_TEAM = TAHUCX2CK7;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = OCRApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -385,8 +385,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = rvignav.OCRApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tickbirdcovignavayaan.Tickbird;
+				PRODUCT_NAME = Tickbird;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -400,7 +400,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 87JL4NC93M;
+				DEVELOPMENT_TEAM = TAHUCX2CK7;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = OCRApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -408,8 +408,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = rvignav.OCRApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tickbirdcovignavayaan.Tickbird;
+				PRODUCT_NAME = Tickbird;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -419,7 +419,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A31D04DA232868A9007E2FF4 /* Build configuration list for PBXProject "OCRApp" */ = {
+		A31D04DA232868A9007E2FF4 /* Build configuration list for PBXProject "Tickbird" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A31D04EF232868AC007E2FF4 /* Debug */,
@@ -428,7 +428,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A31D04F1232868AC007E2FF4 /* Build configuration list for PBXNativeTarget "OCRApp" */ = {
+		A31D04F1232868AC007E2FF4 /* Build configuration list for PBXNativeTarget "Tickbird" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A31D04F2232868AC007E2FF4 /* Debug */,
