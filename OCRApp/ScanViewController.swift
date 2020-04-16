@@ -21,9 +21,15 @@ class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     @IBAction func backButtonClicked(_ sender: Any) {
          synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
+        let vc = storyboard?.instantiateViewController(identifier: "main" ) as! ViewController
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
     @IBAction func savePrescriptionsClicked(_ sender: Any) {
          synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
+        let vc = storyboard?.instantiateViewController(identifier: "main" ) as! ViewController
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
     
     @IBAction func openCameraButton(_ sender: Any) {

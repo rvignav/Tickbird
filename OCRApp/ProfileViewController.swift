@@ -16,6 +16,9 @@ class ProfileViewController:UIViewController {
     
     @IBAction func backButtonClicked(_ sender: Any) {
          synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
+        let vc = storyboard?.instantiateViewController(identifier: "main" ) as! ViewController
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
     @IBAction func confirmButton(_ sender: Any) {
          synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
@@ -45,6 +48,10 @@ class ProfileViewController:UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }
+        let vc = storyboard?.instantiateViewController(identifier: "main" ) as! ViewController
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+        
     }
     override func viewDidLoad() {
         

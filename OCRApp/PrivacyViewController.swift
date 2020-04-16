@@ -80,8 +80,12 @@ class PrivacyViewController: UIViewController {
     
     @IBAction func backButtonClicked(_ sender: Any) {
          synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
+        let vc = storyboard?.instantiateViewController(identifier: "main" ) as! ViewController
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
     @IBAction func onClick(_ sender: UIButton) {
+        synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
         synthesizer.speak(utterance)
     }
     

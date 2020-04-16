@@ -28,6 +28,13 @@ class DatabaseTableViewController: UIViewController { // UITableViewDelegate, UI
         data()
     }
     
+   @IBAction func backButtonClicked(_ sender: Any) {
+         synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
+        let vc = storyboard?.instantiateViewController(identifier: "main" ) as! ViewController
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
     func data() {
         print("finalName: \(finalName)")
         ref = Database.database().reference()
