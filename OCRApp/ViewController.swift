@@ -11,7 +11,7 @@ class ViewController: UIViewController, G8TesseractDelegate {
     @IBOutlet weak var pastbutton: UIButton!
     
     @IBOutlet weak var password: UITextField!
-    let utterance = AVSpeechUtterance(string: "Hello. This is Tickbird™, an app meant to aid visually impaired people in aurally understanding prescriptions from any doctor. Click at the very top right to access our Privacy Policy. Click near the top to Scan a Prescription. If you want to see you past prescriptions, input your name and password, and then click near the middle. Click near the bottom to Update your Profile.")
+    let utterance = AVSpeechUtterance(string: "Hello. This is Tickbird™, an app meant to aid visually impaired people in aurally understanding prescriptions from any doctor. Click at the very top right to access our Privacy Policy. Click near the top to Scan a Prescription. If you want to see your past prescriptions, input your name and password, and then click near the middle. Click near the bottom to Update your Profile.")
 
     @IBAction func scanPrescriptionClicked(_ sender: Any) {
          synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
