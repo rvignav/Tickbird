@@ -228,7 +228,7 @@
         <!--Scan View Controller-->
         <scene sceneID="7Y0-wK-Jc8">
             <objects>
-                <viewController id="WUX-BU-KOc" customClass="ScanViewController" customModule="Tickbird" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Scan" id="WUX-BU-KOc" customClass="ScanViewController" customModule="Tickbird" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pvH-J7-ehx"/>
                         <viewControllerLayoutGuide type="bottom" id="jpe-hA-uP6"/>

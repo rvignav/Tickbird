@@ -15,7 +15,7 @@ class ViewController: UIViewController, G8TesseractDelegate {
 
     @IBAction func scanPrescriptionClicked(_ sender: Any) {
          synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
-        let vc = storyboard?.instantiateViewController(identifier: "scan") as! ScanViewController
+        let vc = storyboard?.instantiateViewController(identifier: "Scan" ) as! ScanViewController
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
