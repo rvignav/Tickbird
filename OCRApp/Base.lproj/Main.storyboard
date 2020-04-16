@@ -74,7 +74,7 @@
         <!--View Controller-->
         <scene sceneID="YRe-WU-yIW">
             <objects>
-                <viewController id="ze9-3E-SIs" customClass="ViewController" customModule="Tickbird" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="main" id="ze9-3E-SIs" customClass="ViewController" customModule="Tickbird" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wBm-0J-Cwo"/>
                         <viewControllerLayoutGuide type="bottom" id="dtx-BF-lu9"/>
@@ -666,7 +666,7 @@ Based on the laws of some countries, you may have the right to request access to
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7lH-4v-sbM"/>
+        <segue reference="e64-Rb-Hhd"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.95686274510000002" green="0.7725490196" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
