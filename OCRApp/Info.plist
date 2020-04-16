@@ -23,9 +23,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>OCRApp requires access to your phone's camera.</string>
+	<string>Tickbird requires access to your phone&apos;s camera for you to take pictures of prescriptions.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>OCRApp requires access to your phone's photo library.</string>
+	<string>Tickbird requires access to your phone&apos;s photo library for you to upload pictures of prescriptions.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
