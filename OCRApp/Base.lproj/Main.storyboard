@@ -156,7 +156,6 @@
                                         </state>
                                         <connections>
                                             <action selector="clicked:" destination="ze9-3E-SIs" eventType="touchUpInside" id="mzC-d4-Dqd"/>
-                                            <action selector="pastPrescriptionClicked:" destination="ze9-3E-SIs" eventType="touchUpInside" id="uJQ-1i-lqO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRg-wc-FqI">

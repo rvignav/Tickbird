@@ -19,12 +19,7 @@ class ViewController: UIViewController, G8TesseractDelegate {
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
-    @IBAction func pastPrescriptionClicked(_ sender: Any) {
-         synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
-        let vc = storyboard?.instantiateViewController(identifier: "database" ) as! DatabaseTableViewController
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
-    }
+    
     @IBAction func updateProfileClicked(_ sender: Any) {
          synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
         let vc = storyboard?.instantiateViewController(identifier: "profile" ) as! ProfileViewController
@@ -38,6 +33,7 @@ class ViewController: UIViewController, G8TesseractDelegate {
         present(vc, animated: true)
     }
     @IBAction func clicked(_ sender: Any) {
+        synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
         if (name.text == "" || password.text == "") {
             let alert = UIAlertController(title: "Error", message: "Please fill out all fields.", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
@@ -54,7 +50,8 @@ class ViewController: UIViewController, G8TesseractDelegate {
                 }
                 if bool {
                     self.sendname = self.name.text!
-                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DatabaseTableViewController") as! DatabaseTableViewController
+                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "database") as! DatabaseTableViewController
+                    vc.modalPresentationStyle = .fullScreen
                     print("sending: \(self.sendname)")
                     vc.finalName = self.sendname
                     self.navigationController?.pushViewController(vc, animated: true)
