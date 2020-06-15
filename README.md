@@ -9,4 +9,6 @@ Landing Page: https://tickbird.netlify.app/
 
 App Demo: https://www.youtube.com/watch?v=7230378jFNk
 
+Landing Page Code: https://github.com/rvignav/Tickbird-Website
+
 Featured in the Saratoga Falcon: https://www.saratogafalcon.org/content/sophomores-create-tickbird-app-compete-hackathon
