@@ -5,12 +5,12 @@ An advanced Swift/Node.js mobile app based on the TesseractOCR convolutional neu
 
 App Store URL: https://apps.apple.com/us/app/tickbird-co/id1508006830?ls=1
 
-Landing Page: https://tickbird.netlify.app/
+Video Demo: https://www.youtube.com/watch?v=7230378jFNk
 
-App Demo: https://www.youtube.com/watch?v=7230378jFNk
-
-Landing Page Code: https://github.com/rvignav/Tickbird-Website
-
-Pitch: https://docs.google.com/presentation/d/1dY442wAG3Hk91HyDZDluQm-OmfDMlNpH95d_u01IWZA/edit
+Pitch Deck: https://docs.google.com/presentation/d/1dY442wAG3Hk91HyDZDluQm-OmfDMlNpH95d_u01IWZA/edit
 
 Featured in the Saratoga Falcon: https://www.saratogafalcon.org/content/sophomores-create-tickbird-app-compete-hackathon
+
+Landing Page: https://tickbird.netlify.app/
+
+Landing Page Source Code: https://github.com/rvignav/Tickbird-Website
